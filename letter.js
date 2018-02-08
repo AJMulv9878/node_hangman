@@ -1,13 +1,14 @@
 function Letter(letter) {
     this.letter = letter;
 
-    this.secret = "_";
-
     this.guessed = false;
 
     this.show = function() {
         if (this.guessed === true) {
-            this.secret = this.letter;
+            return this.letter;
+        }
+        else {
+            return "_ ";
         }
     };
 

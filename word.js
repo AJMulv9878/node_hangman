@@ -12,7 +12,7 @@ function Word() {
     this.win = false;
 
     this.create = function(randomWord) {
-        var word = randomWord.split('');
+        var word = randomWord;
         this.wordGuess = '';
         
         for (i = 0; i < word.length; i++) {
@@ -21,10 +21,11 @@ function Word() {
         };
 
         for (i = 0; i < this.letterArray.length; i++) {
-            this.wordGuess += this.letterArray[i].secret + " ";
+            this.wordGuess += this.letterArray[i].show();
         };
 
         console.log("\n" + this.wordGuess + "\n");
+
     };
 
     this.letterGuess = function(guessLetter) {
@@ -54,7 +55,7 @@ function Word() {
         }
 
         for (i = 0; i < this.letterArray.length; i++) {
-            this.wordGuess += this.letterArray[i].secret + " ";
+            this.wordGuess += this.letterArray[i].show();
         };
 
         if (this.correct === true) {
